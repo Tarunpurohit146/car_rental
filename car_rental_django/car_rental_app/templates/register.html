@@ -1,0 +1,31 @@
+{% load static %}
+<title>signup</title>
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+        <form action='{% url "signup" %}' method='post'>
+        {% csrf_token %}
+        <div class="container">
+            <div class="card">
+                <a class="Register">Sign Up</a>
+                <div class="inputBox">
+                    {{ form.name }}
+                    <span class="user">Username</span>
+                </div>
+        
+                <div class="inputBox">
+                    {{ form.email }}
+                    <span>Email</span>
+                </div>
+
+                <div class="inputBox">
+                    {{ form.password }}
+                    <span>Password</span>
+                </div>
+                <button class="enter">Enter</button>
+            </div>
+        </div>
+</form>
+{% if error %}
+<div class="err">
+  <span>{{error}}</span>
+</div>
+{% endif %}

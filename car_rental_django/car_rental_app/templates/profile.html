@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile</title>
+        <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+    </head>
+    <body>  
+        <div class="box1">
+            <div class="box2">
+                <h2>Name : {{data2.name}}</h2>
+                <h2>Email : {{data2.email}}</h2>
+                <a href='{% url "forgot" %}'>Re-set Password</a>
+                <a href='{% url "signout" %}'>Sign Out</a>
+            </div>
+            <h3>History</h3>
+            <div class="box3">               
+                    <textarea readonly>
+                        {% for i in data3 %}
+                            Name : {{i.user_name}}
+                            Car : {{i.car_name}}
+                            Cost : {{i.total_cost}}
+                            Start Date : {{i.start_date}}
+                            End Date : {{i.end_date}}
+                            Pickup Place : {{i.pick_place}}
+                            Drop Place : {{i.drop_place}}
+                        {% endfor %}
+                    </textarea>
+            </div>
+        </div>
+        {% if admin %}
+            <div class="box4">
+                <h1>Car's Under Rent</h1>
+                <div class="box4_1">
+                    <textarea readonly>
+                        {% for i in data1 %}
+                            ID  :   {{i.id}}
+                            Name : {{i.user_name}}
+                            Car : {{i.car_name}}
+                            Cost : {{i.total_cost}}
+                            Start Date : {{i.start_date}}
+                            End Date : {{i.end_date}}
+                            Pickup Place : {{i.pick_place}}
+                            Drop Place : {{i.drop_place}}
+                        {% endfor %}
+                    </textarea>      
+                
+            </div>
+            <form action="{% url 'profile' %}" method="post">
+                {% csrf_token %}
+                <div class="edit">
+                    <label>Enter ID</label>
+                    <input type="text" name="id">
+                    <input type="submit">
+            </div>
+            </form>
+        </div>
+        {% endif %}
+    </body>
+</html>

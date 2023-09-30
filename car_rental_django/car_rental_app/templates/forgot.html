@@ -1,0 +1,37 @@
+{% load static %}
+<title>Forgot</title>
+<link rel="stylesheet" href="{% static 'css/forgot.css' %}">
+        {% if otp %}
+        <form action="{% url 'forgot' %}" method='post'>
+        {% csrf_token %}
+        <div class="container">
+            <div class="card">
+        
+                <div class="inputBox">
+                    <input type="text" name="otp" required>
+                    <span>OTP</span>
+                </div>
+
+                <button class="enter">Enter</button>
+            </div>
+        </div>
+</form>
+      {% else %}
+      <form action='{% url "forgot" %}' method='post'>
+        {% csrf_token %}
+        <div class="container">
+            <div class="card">
+        
+                <div class="inputBox">
+                    <input type="email" name="email" required>
+                    <span>Email</span>
+                </div>
+
+                <button class="enter">Enter</button>
+            </div>
+        </div>
+</form>
+  {% endif %}
+{% if error %}
+  <span class="err">{{error}}</span>
+{% endif %}

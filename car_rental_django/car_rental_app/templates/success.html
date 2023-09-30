@@ -1,0 +1,36 @@
+{% load static %}
+<style>
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main img{
+        width: 20pc;
+        height: 20pc;
+        position: relative;
+        top:6pc;
+    }
+    label{
+        position: relative;
+        top:6pc;
+        font-family: sans-serif;
+        font-size: 5em;
+        left: 25%;
+    }
+    label span{
+        color: rgb(32, 207, 125);
+    }
+    h1{
+        margin: 20px;
+        cursor: pointer;
+    }
+    h1 span{
+        color: rgb(32, 207, 125);
+    }
+</style>
+<h1 onclick="window.location.href=`{% url 'home' %}`">Car <span>Rental</span></h1>
+<div class="main">
+    <img src="{% static 'images/R.gif' %}">
+</div>
+<label>Successfully <span>Payed</span></label>

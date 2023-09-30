@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>select car</title>
+        <link rel="stylesheet" href="{% static 'css/select_car.css' %}">
+    </head>
+    <body>
+        <div class="box">
+            <label onclick="window.location.href=`{% url 'home' %}`">Car <span>Rental</span></label>
+            <h1>Choose Your Car</h1>
+            <div class="box1">
+            <div class="box2">
+                <form method="post" action="{% url 'select_car' %}">
+                    {% csrf_token %}
+                <div class="select_car">
+                    <img src="{% static 'images/grandi10.jpg' %}">
+                    <h2>Grand i10<span>{{data.grandi10}} Per/day</span></h2>
+                    <button name="car" value="grandi10" id="grandbook">Book now</button>
+                    <a href="{% url 'car_single' 'grandi10' %}">Details</a>
+                    {% if data.grandi10instock == "yes" %}
+                        <h3>In Stock</h3>
+                    {% else %}
+                        <h3 id="out">Out Of Stock</h3>
+                        <script>
+                            grandbook.setAttribute("disabled", true);
+                        </script>
+                    {% endif %} 
+                </div>
+                <div class="select_car">
+                    <img src="{% static 'images/swift.jpg' %}">
+                    <h2>Swift<span>{{data.swift}} Per/day</span></h2>
+                    <button name="car" value="swift" id="swiftbook">Book now</button>
+                    <a href="{% url 'car_single' 'swift' %}">Details</a>
+                    {% if data.swiftinstock == "yes" %}
+                        <h3>In Stock</h3>
+                    {% else %}
+                        <h3 id="out">Out Of Stock</h3>
+                        <script>
+                            swiftbook.setAttribute("disabled", true);
+                        </script>
+                    {% endif %}
+                </div>
+                <div class="select_car">
+                    <img src="{% static 'images/tiago.jpg' %}">
+                    <h2>Tiago<span>{{data.tiago}} Per/day</span></h2>
+                    <button name="car" value="tiago" id="tiagobook">Book now</button>
+                    <a href="{% url 'car_single' 'tiago' %}">Details</a>
+                    {% if data.tiagoinstock == "yes" %}
+                        <h3>In Stock</h3>
+                    {% else %}
+                        <h3 id="out">Out Of Stock</h3>
+                        <script>
+                            tiagobook.setAttribute("disabled", true);
+                        </script>
+                    {% endif %}                
+                </div>
+            </div>
+            <div class="box2">
+                <div class="select_car">
+                    <img src="{% static 'images/toyotacrysta.jpg' %}">
+                    <h2>Toyota Crysta<span>{{data.toyotacrysta}} Per/day</span></h2>
+                    <button name="car" value="toyotacrysta" id="toyotacrystaboook">Book now</button>
+                    <a href="{% url 'car_single' 'toyotacrysta' %}">Details</a>
+                    {% if data.toyotacrystainstock == "yes" %}
+                        <h3>In Stock</h3>
+                    {% else %}
+                        <h3 id="out">Out Of Stock</h3>
+                        <script>
+                            toyotacrystaboook.setAttribute("disabled", true);
+                        </script>
+                    {% endif %}
+                </div>
+                <div class="select_car">
+                    <img src="{% static 'images/scorpio.jpg' %}">
+                    <h2>Scorpio<span>{{data.scorpio}} Per/day</span></h2>
+                    <button name="car" value="scorpio" id="scorpiobook">Book now</button>
+                    <a href="{% url 'car_single' 'scorpio' %}">Details</a>
+                    {% if data.scorpioinstock == "yes" %}
+                        <h3>In Stock</h3>
+                    {% else %}
+                        <h3 id="out">Out Of Stock</h3>
+                        <script>
+                            scorpiobook.setAttribute("disabled", true);
+                        </script>
+                    {% endif %}
+                </div>
+                <div class="select_car">
+                    <img src="{% static 'images/thar.jpg' %}">
+                    <h2>Thar<span>{{data.thar}} Per/day</span></h2>
+                    <button name="car" value="thar" id="tharbook">Book now</button>
+                    <a href="{% url 'car_single' 'thar' %}">Details</a>
+                    {% if data.tharinstock == "yes" %}
+                        <h3>In Stock</h3>
+                    {% else %}
+                        <h3 id="out">Out Of Stock</h3>
+                        <script>
+                            tharbook.setAttribute("disabled", true);
+                        </script>
+                    {% endif %}
+                </div>
+                </div>
+            </div>
+        </form>
+        </div>
+    </body>
+</html>

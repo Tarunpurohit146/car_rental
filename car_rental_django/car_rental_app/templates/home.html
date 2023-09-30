@@ -1,0 +1,164 @@
+{% load static %}
+<!Doctype html>
+<html>
+    <head>
+        <title>home</title>
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
+    <body>
+        <div class="bg1">
+            <h1>Car <span>Rental</span></h1>
+            <div class="navg">
+            {% if profile == "yes" %}
+            <nav>
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <a href="{% url 'profile' %}">Profile</a>
+            </nav>
+            {% else %}
+            <nav>
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#service">Services</a>
+                <a href="#contact">Contact</a>
+                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'signup' %}">Sign Up</a>
+            </nav>
+            {% endif %}
+            <div class="parg">
+                <h1><span>Fast & Easy Way</span> To Rent A Car</h1>
+                <p>A small river named Duden flows by their place and supplies 
+                    it with the necessary regelialia. It is a paradisematic country, 
+                    in which roasted parts</p>
+            </div>
+        </div>
+    </div>
+    <div class="bg2">
+        <form action="#" method="post">
+            <h1><span>Make</span> your trip</h1>
+            <form action="{% url 'home' %}" method="post">
+            {% csrf_token %}
+            <div class="inputBox">
+                <select name="pickup">
+                    {% for i in data %}
+                    <option value={{i}}>{{i}}</option>
+                    {% endfor %}
+                </select>
+                <span>PICK-UP LOCATION</span>
+            </div>
+            <div class="inputBox">
+                <select name="dropoff">
+                    {% for i in data %}
+                    <option value={{i}}>{{i}}</option>
+                    {% endfor %}
+                </select>
+                <span>DROP-OFF LOCATION</span>
+            </div>
+            <div class="inputBox">
+                <input type="date" name="pickupdate" required>
+                <span>PICK-UP DATE</span>
+            </div>
+            <div class="inputBox">
+                <input type="date" name="dropoffdate" required>
+                <span>DROP-OFF DATE</span>
+            </div>
+            <div class="button1">
+                <input type="submit" value="Rent A Car Now">
+            </div>
+        </form>
+        </form>
+    </div>
+    <div class="bg3">
+        <div class="cont1">
+            <h1>Better Way to Rent Your Perfect Cars</h1>
+            <div class="cont2">
+            <div class="cont2_1">
+                <img src="{% static 'images/rout.png' %}">
+                <span>Choose Your Pickup Location</span>
+            </div>
+            <div class="cont2_1">
+                <img src="{% static 'images/handshake.png' %}">
+                <span>Select the Best Deal</span>
+            </div>
+            <div class="cont2_1">
+                <img src="{% static 'images/car-rental.png' %}">
+                <span>Reserve Your Rental Car</span>
+            </div>
+            
+        </div>
+    </div>
+</div>
+    <div class="about" id="about">
+        <div class="cont1">
+            <h3>ABOUT US</h3>
+            <h1>Welcome to Carbook</h1>
+            <p>A small river named Duden flows by their place and supplies it with the 
+                necessary regelialia. It is a paradisematic country, in which roasted 
+                parts of sentences fly into your mouth.On her way she met a copy. 
+                The copy warned the Little Blind Text, that where it came from it 
+                would have been rewritten a thousand times and everything that was 
+                left from its origin would be the word "and" and the Little Blind 
+                Text should turn around and return to its own, safe country. A small 
+                river named Duden flows by their place and supplies it with the necessary 
+                regelialia. It is a paradisematic country, in which roasted parts of 
+                sentences fly into your mouth.</p>
+        </div>
+        <img src="{% static 'images/bg_1.jpg' %}">
+    </div>
+    <div class="service" id="service">
+        <h3>SERVICES</h3>
+        <h1>Our Latest Services</h1>
+        <div class="cont1">
+        <div class="cont1_1">
+            <img src="{% static 'images/rout.png' %}">
+            <p><span>Wedding Ceremony</span><br><br>A small river named Duden flows by their place and supplies 
+                it with the necessary regelialia.</p>
+        </div>
+        <div class="cont1_1">
+            <img src="{% static 'images/rout.png' %}">
+            <p><span>City Transfer</span><br><br>A small river named Duden flows by their place and 
+                supplies it with the necessary regelialia.</p>
+        </div>
+        <div class="cont1_1">
+            <img src="{% static 'images/rout.png' %}">
+            <p><span>Airport Transfer</span><br><br>A small river named Duden flows by their place and 
+                supplies it with the necessary regelialia.</p>
+        </div>
+        <div class="cont1_1">
+            <img src="{% static 'images/rout.png' %}">
+            <p><span>Whole City Tour</span><br><br>A small river named Duden flows by their place and supplies 
+                it with the necessary regelialia.</p>
+        </div>
+    </div>
+    </div>
+    <div class="contact" id="contact">
+        <h3>CONTACT</h3>
+        <div class="cont1">
+            <img src="{% static 'images/maps.png' %}">
+            <h2>Address:</h2>
+            <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+        </div>
+        <div class="cont1">
+            <img src="{% static 'images/smartphone.png' %}">
+            <h2>Phone:</h2>
+            <p>+ 1235 2355 98</p>
+        </div>
+        <div class="cont1">
+            <img src="{% static 'images/mail.png' %}">
+            <h2>Email:</h2>
+            <p>info@yoursite.com</p>
+        </div>
+        <div class="form">
+            <div class="text">
+                <input type="text" placeholder="Your Name">
+                <input type="text" placeholder="Your Email">
+                <input type="text" placeholder="Subject">
+            </div>
+            <textarea placeholder="Message"></textarea>
+            <button>Send Message</button>
+    </div>
+    </div>
+    </body>
+</html>

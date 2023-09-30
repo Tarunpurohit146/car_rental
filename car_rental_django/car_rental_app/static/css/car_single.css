@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+.main h1{
+    float: left;
+    margin: 2pc;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    cursor: pointer;
+}
+.main h1 span{
+    color: rgb(10, 254, 141);;
+}
+.main{
+    display: block;
+}
+.main img{
+    width: 60pc;
+    height: 30pc;
+    margin-top: 10pc;
+}
+.main h2{
+    text-align: center;
+    margin: 20px;
+    font-size: 30px;
+}
+.main .features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main .features .fet{
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 5pc;
+}
+.main .features .fet img{
+    width: 80px;
+    height: 80px;
+    position: relative;
+    top:-150px;
+    left: 30px;
+    border-radius: 5pc;
+}
+.main .features .fet h3{
+    position: relative;
+    top:-140px;
+    font-size: 15px;
+    text-align: center;
+}
+.details{
+    display: block;
+}
+.details .detail1 h1{
+    color: rgb(31, 110, 194);
+    font-size: 30px;
+    margin: 40px;
+    text-align: center;
+}
+.details .detail1 table{
+    display: flex;
+    justify-content: center;
+}
+.details .detail1 table tr td{
+    position: relative;
+    left: 8pc;
+    text-align: justify;
+    font-size: 20px;
+    width: 20pc;
+    padding: 5px;
+    color: rgb(10, 254, 141);
+}
+.details .detail1 p{
+    text-align: center;
+    margin: 4pc;
+    margin-top:10px;
+    font-size: 20px;
+}
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button a{
+    margin-bottom: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(12, 85, 148, 0.999);
+    color: white;
+}

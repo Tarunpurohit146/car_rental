@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.box label{
+    position: absolute;
+    right: 75pc;
+    margin: 2pc;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    cursor: pointer;
+}
+.box label span{
+    color: rgb(10, 254, 141);;
+}
+.box{
+    display: grid;
+    grid-row: 1;
+    margin: 10px;
+    box-shadow:  5px 5px 22px #3a3838,
+    -5px -5px 12px #9e9898;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    justify-content: center;
+    text-align: center;
+}
+.box h1{
+    font-size: 4em;
+    letter-spacing: 0.1em;
+    margin-top: 40px;
+}
+.box .box1{
+    margin: 10px;
+    border-radius: 10px;             
+    width: auto;
+    height: auto;
+}
+.box .box1 .box2{
+    margin:50px;
+}
+.box .box1 .select_car{
+    display: inline-block;
+    box-shadow:  5px 5px 22px #282626,
+    -5px -5px 12px #706a6a;
+    width:  25pc;
+    height: 30pc;
+    margin: 10px;
+    border-radius: 10px;
+}
+.box .box1 .box2 .select_car img{
+    width:25pc;
+    height: 18pc;
+    border-radius:10px;
+}
+.box .box1 .box2 .select_car h2{
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.box .box1 .box2 .select_car h3{
+    font-size: 25px;
+    color: rgba(19, 224, 91, 0.866);
+}
+.box .box1 .box2 .select_car h3[id="out"]{
+    font-size: 25px;
+    color: rgba(224, 39, 39, 0.784);
+}
+.box .box1 .box2 .select_car span{
+    color: rgba(18, 71, 193, 0.744);
+    float: right;
+    margin-right: 15px;
+}
+.box .box1 .box2 .select_car button{
+    position: relative;
+    margin:30px;
+    padding: 10px 20px;
+    top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: rgba(12, 85, 148, 0.999);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+}
+.box .box1 .box2 .select_car a{
+    background-color: rgb(10, 254, 141);
+    position: relative;
+    margin:30px;
+    padding: 10px 20px;
+    top: 10px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 20px;
+}

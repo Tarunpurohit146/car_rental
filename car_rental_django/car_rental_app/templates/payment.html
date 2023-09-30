@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'css/payment.css' %}">
+  </head>
+  <body>
+    <div class="box1">
+      <div class="box1-1">
+        <h1>Details</h1>
+        <table>
+          <tr>
+            <td>User Name:</td>
+            <td>{{name}}</td>
+          </tr>
+          <tr>
+            <td>Car Name:</td>
+            <td>{{detail.car_name}}</td>
+          </tr>
+          <tr>
+            <td>Car Price:</td>
+            <td>{{detail.price}}</td>
+          </tr>
+          <tr>
+            <td>PickUp Place:</td>
+            <td>{{detail.pickup}}</td>
+          </tr>
+          <tr>
+            <td>Drop Place:</td>
+            <td>{{detail.dropoff}}</td>
+          </tr>
+          <tr>
+            <td>Start Day:</td>
+            <td>{{detail.pickupdate}}</td>
+          </tr>
+          <tr>
+            <td>End Day:</td>
+            <td>{{detail.dropoffdate}}</td>
+          </tr>
+        </table>
+      </div>
+        <div class="box1-2">
+            <h1>Payment</h1>
+            <div class="card1">
+              <label>CARDHOLDER'S NAME</label>
+              <input type="text" placeholder="Name on card">
+            </div>
+            <div class="card1">
+              <label>CARD NUMBER</label>
+              <input type="text" placeholder="Card Number">
+            </div>
+            <div class="card2">
+              <input type="text" placeholder="EXPIRY DATE">
+              <input type="text" placeholder="CVV">
+            </div>
+            <div class="submit">
+              <form action="{% url 'payment' %}" method="post">
+                {% csrf_token %}
+              <input type="submit" value="Pay Now">
+              </form>
+            </div>  
+        </div>
+    </div>
+  </body>
+</html>

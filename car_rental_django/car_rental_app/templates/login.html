@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+<form action='{% url "login" %}' method='post'>
+  {% csrf_token %}
+<div class="container">
+    <div class="card">
+        <a class="login">Log in</a>
+        <div class="inputBox">
+            {{ form.name }}
+            <span>Username</span>
+        </div>
+
+        <div class="inputBox">
+            {{ form.password }}
+            <span>Password</span>
+        </div>
+        <div class="inputBox">
+          <a style="color: #000;margin-right: 18px;font-size: 13.5px; text-decoration: none;" href="{% url 'signup' %}">already have account?</a><a style="color: #000;margin-left: 18px;font-size: 13.5px;text-decoration: none;" href="{% url 'forgot' %}">Forgot Password</a>
+        </div>
+        <button class="enter">Enter</button>
+
+    </div>
+</div>
+</form>
+{% if error %}
+<div class="err">
+  <span>{{error}}</span>
+</div>
+{% endif %}

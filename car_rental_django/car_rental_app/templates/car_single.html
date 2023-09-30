@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/car_single.css' %}">
+    </head>
+    <body>
+        <div class="main">
+            <h1 onclick="window.location.href=`{% url 'home' %}`">Car <span>Rental</span></h1>
+            <img src={{url}}>
+            <h2>{{name}}</h2>
+            <div class="features">
+                <div class="fet">
+                    <img src="{% static 'images/barometer-.png' %}">
+                    <h3>Mileage</h3>
+                    <h3>4000</h3>
+                </div>
+                <div class="fet">
+                    <img src="{% static 'images/gas-fuel.png' %}">
+                    <h3>Fule</h3>
+                    <h3>{{detail.fule_type}}</h3>
+                </div>
+                <div class="fet">
+                    <img src="{% static 'images/car-seat.png' %}">
+                    <h3>Seats</h3>
+                    <h3>{{detail.seats}}</h3>
+                </div>
+                <div class="fet">
+                    <img src="{% static 'images/hatchback-car.png' %}">
+                    <h3>Model</h3>
+                    <h3>{{detail.model}}</h3>
+                </div>
+                <div class="fet">
+                    <img src="{% static 'images/piston.png' %}">
+                    <h3>Transmission</h3>
+                    <h3>Manual</h3>
+                </div>
+            </div>
+        </div>
+        <div class="details">
+            <div class="detail1">
+                <h1>Features</h1>
+                <table>
+                    <tr>
+                        <td>Airconditions</td>
+                        <td>Seat Belt</td>
+                        <td>Audio input</td>
+                    </tr>
+                    <tr>
+                        <td>Child Seat</td>
+                        <td style="color: rgb(231, 61, 9);">Sleeping Bed</td>
+                        <td>Long Term Trips</td>
+                    </tr>
+                    <tr>
+                        <td>GPS</td>
+                        <td>Water</td>
+                        <td>Car Kit</td>
+                    </tr>
+                    <tr>
+                        <td>Luggage</td>
+                        <td>Bluetooth</td>
+                        <td>Remote central locking</td>
+                    </tr>
+                    <tr>
+                        <td>Music</td>
+                        <td style="color: rgb(231, 61, 9);">Onboard computer</td>
+                        <td>Climate control</td>
+                    </tr>
+                </table>
+                <h1>Description</h1>
+                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+
+                <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+            </div>
+        </div>
+    </body>
+</html>
