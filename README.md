@@ -16,6 +16,7 @@ $ git clone https://github.com/Tarunpurohit146/car_rental.git
 $ cd car_rental
 $ cd bin
 $ source activate
+$ pip install django
 ```
 Change the EMAIL and PASSWD field in ```mail.py```
 ```
